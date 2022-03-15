@@ -636,7 +636,7 @@
                 foreach($factionOCData['crimes'] as $factionOCID => $factionOC)
                 {
                     // Timestamp for when OC is ready
-                    $OCFinishTime = $factionOC['time_ready'];
+                    $Columnoc = $factionOC['time_ready'];
 
                     
                     foreach($factionOC['participants'] as $factionMemberKey)
@@ -651,21 +651,21 @@
                             }
 
                             // if OC is ready, check member status and format table data
-                            if($currentTime > $OCFinishTime)                        
+                            if($currentTime > $Columnoc)                        
                             {
                                 if($factionMemberInfo['state'] != "Okay")
                                 {
                                     $details = $factionMemberInfo['details'];
-                                    $OCColumn[$factionMemberID] = "<td bgcolor='Orange'>Delaying OC due to $details</td>";
+                                    $ocColumn[$factionMemberID] = "<td bgcolor='Orange'>Delaying OC due to $details</td>";
                                 }
                                 else
                                 {
-                                    $OCColumn[$factionMemberID] = "<td bgcolor='Green'>OC Ready</td>";
+                                    $ocColumn[$factionMemberID] = "<td bgcolor='Green'>OC Ready</td>";
                                 }
                             }
                             else // If OC is not ready, display date/time when ready in TCT
                             {
-                                $OCColumn[$factionMemberID] = "<td>" . date("r", $OCFinishTime) . "</td>";
+                                $ocColumn[$factionMemberID] = "<td>" . date("r", $Columnoc) . "</td>";
                             }
                         }
                     }
@@ -785,9 +785,9 @@
             // Add info for OC if user has access
             if($factionAPIAccess)
             {
-                if($OCColumn[$id])
+                if($ocColumn[$id])
                 {
-                    echo $OCColumn[$id];
+                    echo $ocColumn[$id];
                 }
                 else
                 {
