@@ -1,0 +1,76 @@
+.table-sortable th {
+  cursor: pointer;
+}
+
+.table-sortable .th-sort-asc::after {
+  content: "\25b4";
+}
+
+.table-sortable .th-sort-desc::after {
+  content: "\25be";
+}
+
+.table-sortable .th-sort-asc::after,
+.table-sortable .th-sort-desc::after {
+  margin-left: 5px;
+}
+
+.shown
+{
+    display: table-row;
+}
+
+.hidden
+{
+    display: none;
+}
+
+#factionTable
+{
+    border:solid 1px black;
+}
+
+
+#factionTable .hospital
+{
+    background-color: red;
+    color: red;
+}
+
+#factionTable .jail
+{
+    background-color: blue;
+}
+
+#factionTable .traveling
+{
+    background-color: lightblue;
+}
+
+td.online
+{
+    background-color: green;
+}
+
+td.idle
+{
+    background-color: yellow;
+}
+
+td.offline
+{
+    background-color: red;
+}
+
+tr.jail
+{}
+
+tr.hospital
+{
+    
+}
+
+tr.traveling
+{
+    
+}
