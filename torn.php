@@ -636,7 +636,7 @@
                 foreach($factionOCData['crimes'] as $factionOCID => $factionOC)
                 {
                     // Timestamp for when OC is ready
-                    $Columnoc = $factionOC['time_ready'];
+                    $finishTime = $factionOC['time_ready'];
 
                     
                     foreach($factionOC['participants'] as $factionMemberKey)
@@ -651,7 +651,7 @@
                             }
 
                             // if OC is ready, check member status and format table data
-                            if($currentTime > $Columnoc)                        
+                            if($currentTime > $finishTime)                        
                             {
                                 if($factionMemberInfo['state'] != "Okay")
                                 {
@@ -665,7 +665,7 @@
                             }
                             else // If OC is not ready, display date/time when ready in TCT
                             {
-                                $ocColumn[$factionMemberID] = "<td>" . date("r", $Columnoc) . "</td>";
+                                $ocColumn[$factionMemberID] = "<td>" . date("r", $finishTime) . "</td>";
                             }
                         }
                     }
